@@ -1,10 +1,11 @@
 [package]
 name = "rust-playground"
-version = "0.0.1"
+version = "0.1.0"
+authors = ["kohdice <kohdice.biz@gmail.com>"]
 edition = "2024"
-authors = ["kohdice"]
+rust-version = "1.88"
+license = "MIT"
 description = "Rust Playground"
 repository = "https://github.com/kohdice/rust-playground"
-license = "MIT"
 
 [dependencies]
