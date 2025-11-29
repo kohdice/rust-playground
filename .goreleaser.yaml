@@ -1,13 +1,10 @@
 version: 2
-
 project_name: rust-playground
-
 before:
   hooks:
     - rustup default stable
     - cargo fetch --locked
     - cargo install --locked cargo-zigbuild
-
 builds:
   - builder: rust
     binary: bin-crate
@@ -21,7 +18,6 @@ builds:
       - --release
       - --locked
       - -p=bin-crate
-
 archives:
   - formats:
       - tar.gz
@@ -30,10 +26,8 @@ archives:
         formats:
           - zip
     name_template: "{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
-
 checksum:
   name_template: "checksums.txt"
-
 changelog:
   sort: asc
   filters:
@@ -42,6 +36,5 @@ changelog:
       - "^test:"
       - "^chore:"
       - "^ci:"
-
 release:
   draft: true
