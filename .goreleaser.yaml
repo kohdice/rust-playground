@@ -1,5 +1,7 @@
 version: 2
 
+project_name: rust-playground
+
 before:
   hooks:
     - rustup default stable
@@ -8,7 +10,7 @@ before:
 
 builds:
   - builder: rust
-    binary: rust-playground
+    binary: bin-crate
     targets:
       - x86_64-unknown-linux-gnu
       - x86_64-apple-darwin
@@ -17,6 +19,29 @@ builds:
       - aarch64-apple-darwin
     flags:
       - --release
+      - --locked
+      - -p=bin-crate
+
+archives:
+  - formats:
+      - tar.gz
+    format_overrides:
+      - goos: windows
+        formats:
+          - zip
+    name_template: "{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
+
+checksum:
+  name_template: "checksums.txt"
+
+changelog:
+  sort: asc
+  filters:
+    exclude:
+      - "^docs:"
+      - "^test:"
+      - "^chore:"
+      - "^ci:"
 
 release:
   draft: true
