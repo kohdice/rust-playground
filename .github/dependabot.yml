@@ -12,20 +12,6 @@ updates:
       - "kohdice"
     commit-message:
       prefix: "cargo"
-
-  - package-ecosystem: "docker"
-    directory: "/"
-    target-branch: "develop"
-    schedule:
-      interval: "weekly"
-      day: "friday"
-      time: "21:00"
-      timezone: "Asia/Tokyo"
-    assignees:
-      - "kohdice"
-    commit-message:
-      prefix: "docker"
-
   - package-ecosystem: "github-actions"
     directory: "/"
     target-branch: "develop"

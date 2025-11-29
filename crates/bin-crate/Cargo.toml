@@ -1,0 +1,12 @@
+[package]
+name = "bin-crate"
+version.workspace = true
+authors.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+description.workspace = true
+repository.workspace = true
+
+[dependencies]
+lib-crate.workspace = true
