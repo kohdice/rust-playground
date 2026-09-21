@@ -36,13 +36,7 @@
         system:
         let
           pkgs = nixpkgsFor.${system};
-          rustToolchain = pkgs.rust-bin.stable."1.92.0".default.override {
-            extensions = [
-              "rust-src"
-              "rust-analyzer"
-              "clippy"
-            ];
-          };
+          rustToolchain = pkgs.rust-bin.fromRustupToolchainFile ./rust-toolchain.toml;
         in
         {
           default = pkgs.mkShell {

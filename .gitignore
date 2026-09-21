@@ -34,3 +34,7 @@ Thumbs.db
 # Claude
 settings.local.json
 .mcp.json
+.plans/
+
+# Codex
+.codex/config.toml
